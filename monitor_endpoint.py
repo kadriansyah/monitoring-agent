@@ -20,8 +20,6 @@ alodokter_agent = AlodokterAgent()
 alomedika_agent = AlomedikaAgent()
 android_agent = AndroidAgent()
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = current_app.config['GOOGLE_APPLICATION_CREDENTIALS']
-
 class UptimeMonitor(Resource):
     def get(self):
         try:
