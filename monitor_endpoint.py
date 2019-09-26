@@ -12,7 +12,6 @@ from com.alodokter.agent.android import AndroidAgent
 
 app = Flask(__name__)
 app.config.from_pyfile('settings/settings.cfg')
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = current_app.config['GOOGLE_APPLICATION_CREDENTIALS']
 api = Api(app)
 
 uptime_agent = UptimeAgent()
@@ -20,6 +19,8 @@ alodokter_rs_agent = AlodokterRSAgent()
 alodokter_agent = AlodokterAgent()
 alomedika_agent = AlomedikaAgent()
 android_agent = AndroidAgent()
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = current_app.config['GOOGLE_APPLICATION_CREDENTIALS']
 
 class UptimeMonitor(Resource):
     def get(self):
